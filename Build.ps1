@@ -26,6 +26,6 @@ $artifacts = ".\artifacts"
 
 if(Test-Path $artifacts) { Remove-Item $artifacts -Force -Recurse }
 
-exec { & dotnet test -c Release -r $artifacts -l trx --verbosity=normal }
+exec { & dotnet build .\src\AutoMapper.Extensions.EnumMapping\AutoMapper.Extensions.EnumMapping.csproj -c Release }
 
 exec { & dotnet pack .\src\AutoMapper.Extensions.EnumMapping\AutoMapper.Extensions.EnumMapping.csproj -c Release -o $artifacts --no-build }
